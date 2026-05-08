@@ -12,6 +12,8 @@
 		btop
 		blueman
 		playerctl
+		wl-clipboard
+		cliphist
 		firefox
 		librewolf
 		obsidian
