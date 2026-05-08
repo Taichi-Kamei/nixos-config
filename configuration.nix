@@ -21,6 +21,7 @@
 
   # Configure network connections interactively with nmcli or nmtui.
   networking.networkmanager.enable = true;
+  networking.networkmanager.wifi.backend = "iwd";
 
   # Set your time zone.
   time.timeZone = "America/Chicago";
@@ -80,20 +81,11 @@
   nixpkgs.config.allowUnfree = true;
 
   environment.systemPackages = with pkgs; [
-    git
-    kitty
-    neovim 
-    nautilus
     wget
-    # vscode
     curl
-    rofi
     zip
     unzip
-    tree
-    firefox
     usbutils
-    tio
   ];
 
   # Some programs need SUID wrappers, can be configured further or are

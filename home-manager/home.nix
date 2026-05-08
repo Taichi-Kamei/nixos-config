@@ -4,12 +4,36 @@
 	home.stateVersion = "25.11";
 
 	home.packages = with pkgs; [
+		git
 		zsh
-		fastfetch
+		tree
+		tio
+		nautilus
 		btop
+		blueman
+		playerctl
+		firefox
 		librewolf
+		obsidian
+		vscode
+		neovim
+		kitty
 		ghostty
+		kicad
+		syncthing
+		rofi
+		iwgtk
+		nwg-look
+		pavucontrol
+		wlogout
+		fastfetch
+		waypaper
+		hypridle
+		hyprlock
+		nwg-dock-hyprland
 		adwaita-icon-theme
+		spotify
+		vesktop
 	];
 	
 	wayland.windowManager.hyprland = {
