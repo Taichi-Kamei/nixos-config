@@ -2,7 +2,7 @@
 
 * {
   font-family: FantasqueSansMono Nerd Font;
-  font-size: 16px;
+  font-size: 14px;
   min-height: 0;
 }
 
@@ -75,7 +75,7 @@
 
 #custom-power {
     color: @blue;
-    font-size: 21px;
+    font-size: 15px;
     padding: 0 4px;
     margin-left: 1px;
     margin-right: 10px;

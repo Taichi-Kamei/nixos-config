@@ -2,8 +2,10 @@
 
   imports = [
      ./zsh.nix
-
+     ./gtk.nix
+     ./qt.nix
   ];
+
   home.username = "ta1";
   home.homeDirectory = "/home/ta1";
   home.stateVersion = "25.11";
@@ -22,12 +24,12 @@
     
     kicad syncthing obsidian
 
-    waybar rofi wlogout fastfetch waypaper
+    waybar gucharmap rofi wlogout fastfetch awww waypaper
     hypridle hyprlock nwg-dock-hyprland adwaita-icon-theme
 
     spotify vesktop
 
-    claude
+    claude-code
   ];
 
 
@@ -60,18 +62,15 @@
 	  extraConfig = builtins.readFile ./hypr/hyprlock.conf;
   };
 
-  services.hypridle = {
-	  enable = true;
-	  extraConfig = builtins.readFile ./hypr/hypridle.conf;
-  };
+  services.hypridle.enable = true;
+  home.file.".config/hypr/hypridle.conf".source = ./hypr/hypridle.conf;
 
   programs.waybar = {
 	enable = true;
 	style = builtins.readFile ./waybar/style.css;
-	settings = builtins.fromJSON (builtins.readFile ./waybar/config.jsonc);
   };
-
-
+  home.file.".config/waybar/config.jsonc".source = ./waybar/config.jsonc;
+  home.file.".config/waybar/frappe.css".source = ./waybar/frappe.css;
 
   programs.fastfetch = {
 	  enable = true;
