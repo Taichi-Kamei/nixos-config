@@ -19,7 +19,7 @@
   networking.hostName = "Melon"; # Define your hostname.
 
 # Configure network connections interactively with nmcli or nmtui.
-    networking.networkmanager.enable = true;
+  networking.networkmanager.enable = true;
   networking.networkmanager.wifi.backend = "iwd";
 
 # Set your time zone.

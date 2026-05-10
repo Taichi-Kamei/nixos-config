@@ -29,6 +29,6 @@
 # inputs.hyprland-plugins.packages.${pkgs.stdenv.hostPlatform.system}.hyprexpo
 # split-monitor-workspaces.packages.${pkgs.stdenv.hostPlatform.system}.split-monitor-workspaces
     ];
-    extraConfig = builtins.readFile ./hyprland.conf;
+    extraConfig = builtins.readFile ./dotfiles/hypr/hyprland.conf;
   };
 }

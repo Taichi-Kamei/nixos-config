@@ -1,0 +1,98 @@
+{
+    "name": "laptop",
+        "output": ["eDP-1","DP-1", "DP-4","DP-5", "DP-6", "DP-7", "DP-8"], 
+        "modules-left": ["hyprland/workspaces"],
+
+    "layer": "top", 
+    "position": "top",
+    "height": 20,
+
+    "modules-left": ["hyprland/workspaces"],
+    "modules-center": ["clock"],
+    "modules-right": ["pulseaudio", "custom/bluetooth", "network", "battery", "custom/power"], 
+
+    "hyprland/workspaces": {
+      "format": "{icon}",
+      "on-click": "activate",
+      "all-outputs": false,
+      "active-only": false,
+      "persistent-workspaces": {
+       "*": 5 
+      },
+      "format-icons": {
+        "default": "⏺",
+        "active": "⏺"
+      }
+    },
+
+    "tray": {
+        "icon-size": 21,
+        "spacing": 10
+    },
+
+    "custom/music": {
+        "format": "   {}",
+        "escape": true,
+        "interval": 3,
+        "tooltip": true,
+        "exec": "playerctl metadata --format='{{ title }}' 2> /dev/null",
+        "on-click": "playerctl play-pause",
+        "max-length": 20
+    },
+
+    "clock": {
+        // "timezone": "America/Vancouver",
+        "timezone": "America/Chicago",
+        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+        "format-alt": " 📅  {:%d/%m/%Y}",
+        "format": "{:%H:%M}"
+    },
+
+    "network": {
+    "font-family": "Symbols Nerd Font Mono",
+    "interface": "wlan0", 
+    "format": "󰤮",
+    "format-wifi": "{icon}",
+    "format-ethernet": "󰈀 {ipaddr}/{cidr}",
+    "format-disconnected": "󰤮",
+    "format-icons": ["󰤟", "󰤢", "󰤥", "󰤨"],
+    "interval": 5, 
+    "tooltip-format": "{essid}",
+    "on-click": "iwgtk &"
+    },
+
+    "custom/bluetooth": {
+        "format": "󰂯",
+        "on-click": "blueman-manager &"
+    },
+
+    "battery": {
+        "states": {
+            "warning": 30,
+            "critical": 15
+        },
+        "format": "{icon}",
+        "format-charging": "󰂄",
+        "format-plugged": "󰁹",
+        "format-icons": ["󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
+        "tooltip-format": "{capacity}%",
+        "on-click": "alacritty --title btop -e btop"
+    },
+
+    "pulseaudio": {
+        "format": "{icon}",
+        "format-muted": "󰖁",
+        "format-icons": {
+            "default": ["󰕿", "󰖀", "󰕾"]
+        },
+        "tooltip-format": "{volume}%",
+        "on-click": "pavucontrol"
+    },
+
+    "custom/power": {
+        "tooltip": false,
+        "on-click": "wlogout -b 5 --layout ~/dotfiles/wlogout/layout --css ~/dotfiles/wlogout/nova.css &",
+	      "format": "⏻"
+    }
+    
+}

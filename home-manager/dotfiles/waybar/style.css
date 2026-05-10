@@ -1,0 +1,95 @@
+@import "frappe.css";
+
+* {
+  font-family: FantasqueSansMono Nerd Font;
+  font-size: 16px;
+  min-height: 0;
+}
+
+#waybar {
+  background: @surface0; 
+  color: @text;
+}
+
+#workspaces { 
+  margin-left: 6px; 
+}
+
+#workspaces button {
+  color: @white;
+  padding-left: 2px;
+  padding-right: 2px;  
+}
+
+#workspaces button.active {
+  color: @blue; 
+  font-size: 10px;
+}
+
+#workspaces button:hover {
+  color: @sapphire;
+  background: transparent;
+}
+
+#clock {
+  color: @white;
+  font-weight: 600; 
+  font-size: 12pt;  
+  margin: 0 2px;
+  padding: 0 8px;
+}
+
+#custom-bluetooth{ 
+  color: @white;   
+  margin: 0 2px;
+  padding-left: 5px;
+  padding-right: 2px;
+  font-size: 15px;
+}
+
+#network{ 
+  color: @white;   
+  margin: 0 2px;
+  padding: 0 9px;
+  font-size: 15px;
+}
+
+#battery{ 
+  color: @white;   
+  margin: 0 2px;
+  padding: 0 7px;
+  font-size: 15px;
+}
+
+#battery.charging,
+#battery.plugged{
+  color: #E4F0E8;
+}
+  
+#pulseaudio{ 
+  color: @white;   
+  margin: 0 3px;
+  padding: 0 9px;
+  font-size: 15px;
+}
+
+#custom-power {
+    color: @blue;
+    font-size: 21px;
+    padding: 0 4px;
+    margin-left: 1px;
+    margin-right: 10px;
+}
+
+#custom-music {
+  font-size: 12px;
+  color: @white;
+  margin-left: 10px;
+  border-radius: 1rem;
+}
+
+
+#tray {
+  margin-right: 1rem;
+  border-radius: 0.7rem;
+}
