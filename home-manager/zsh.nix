@@ -1,11 +1,6 @@
 { pkgs, ... }: {
   programs.zsh = {
     enable = true;
-    initExtra = ''
-	    if [ -z "$DISPLAY" ] && [ "$XDG_VTNR" = "1" ]; then
-		    exec Hyprland
-	    fi
-    '';
     oh-my-zsh = {
       enable = true;
       plugins = [ "git" ];
@@ -29,11 +24,15 @@
       source "''${XDG_CACHE_HOME:-''$HOME/.cache}/p10k-instant-prompt-''${(%):-%n}.zsh"
      fi
      fi
+
+     if [ -z "$DISPLAY" ] && [ "$XDG_VTNR" = "1" ]; then
+         exec Hyprland
+     fi
       [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
       export TERMINAL=ghostty
       alias n="nvim"
       alias l="clear"
-      alias rebuild="sudo nixos-rebuild switch --flake ~/nixos-config#Melon"
+      alias re="sudo nixos-rebuild switch --flake ~/nixos-config#Melon"
 
     '';
   };
