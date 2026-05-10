@@ -17,12 +17,19 @@
         file = "share/zsh-autosuggestions/zsh-autosuggestions.zsh";
       }
     ];
-    initExtra = ''
+
+    initContent = ''
+     if [[ "$TERM" != "linux" ]]; then
+     if [[ -r "''${XDG_CACHE_HOME:-''$HOME/.cache}/p10k-instant-prompt-''${(%):-%n}.zsh" ]]; then
+      source "''${XDG_CACHE_HOME:-''$HOME/.cache}/p10k-instant-prompt-''${(%):-%n}.zsh"
+     fi
+     fi
       [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-      export TERMINAL=alacritty
+      export TERMINAL=ghostty
       alias n="nvim"
       alias l="clear"
       alias rebuild="sudo nixos-rebuild switch --flake ~/nixos-config#Melon"
+
     '';
   };
 

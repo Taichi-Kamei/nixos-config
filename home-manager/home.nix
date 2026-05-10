@@ -18,15 +18,32 @@
 
     firefox librewolf
     
-    neovim vscode kitty ghostty
+    neovim tmux kitty ghostty vscode
     
     kicad syncthing obsidian
 
-    rofi wlogout fastfetch waypaper
+    waybar rofi wlogout fastfetch waypaper
     hypridle hyprlock nwg-dock-hyprland adwaita-icon-theme
 
     spotify vesktop
+
+    claude
   ];
+
+
+  programs.ghostty = {
+
+	  enable = true;
+	  settings = {
+		  font-family = "JetBrainsMono Nerd Font";
+		  font-size = 12;
+
+		  background-opacity = 0.85;
+		  background-blue = true;
+		  theme = "Nord";
+	  };
+
+  };
 
 
   wayland.windowManager.hyprland = {
@@ -35,6 +52,46 @@
 # inputs.hyprland-plugins.packages.${pkgs.stdenv.hostPlatform.system}.hyprexpo
 # split-monitor-workspaces.packages.${pkgs.stdenv.hostPlatform.system}.split-monitor-workspaces
     ];
-    extraConfig = builtins.readFile ./dotfiles/hypr/hyprland.conf;
+    extraConfig = builtins.readFile ./hypr/hyprland.conf;
   };
+
+  programs.hyprlock = {
+	  enable = true;
+	  extraConfig = builtins.readFile ./hypr/hyprlock.conf;
+  };
+
+  services.hypridle = {
+	  enable = true;
+	  extraConfig = builtins.readFile ./hypr/hypridle.conf;
+  };
+
+  programs.waybar = {
+	enable = true;
+	style = builtins.readFile ./waybar/style.css;
+	settings = builtins.fromJSON (builtins.readFile ./waybar/config.jsonc);
+  };
+
+
+
+  programs.fastfetch = {
+	  enable = true;
+	  settings = {
+		  modules = [
+			  "title"
+				  "break"
+				  "os"
+				  "wm"
+				  "kernel"
+				  "cpu"
+				  "break"
+				  "uptime"
+				  "memory"
+				  "disk"
+				  "break"
+				  "colors"
+		  ];
+	  };
+  };
+
+
 }
