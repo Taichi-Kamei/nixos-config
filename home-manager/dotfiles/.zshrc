@@ -28,14 +28,4 @@ export PATH="$HOME/.local/share/nvim/mason/bin:$PATH"
 alias n="nvim"
 alias l="clear"
 alias z="source ~/.zshrc"
-
-alias p="sudo pacman -S"
-alias pq="pacman -Qi"
-alias ps="pacman -Ss"
-
-alias y="yay -S"
-alias yq="yay -Qi"
-alias ys="yay -Ss"
-alias yu="yay -Syu"
-
-
+alias rebuild="sudo nixos-rebuild switch --flake .#Melon"

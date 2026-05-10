@@ -1,4 +1,9 @@
 {config, pkgs, inputs, split-monitor-workspaces, ...}:{
+
+  imports = [
+     ./zsh.nix
+
+  ];
   home.username = "ta1";
   home.homeDirectory = "/home/ta1";
   home.stateVersion = "25.11";
@@ -22,6 +27,7 @@
 
     spotify vesktop
   ];
+
 
   wayland.windowManager.hyprland = {
     enable = true;
