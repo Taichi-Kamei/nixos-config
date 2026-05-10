@@ -14,17 +14,17 @@
     
     git zsh tree tio
 
-    nautilus btop blueman pavucontrol playerctl iwgtk nwg-look
+    nautilus btop blueman pavucontrol playerctl brightnessctl wireplumber iwgtk nwg-look wev
 
-    wl-clipboard cliphist
+    wl-clipboard cliphist grim slurp
 
-    firefox librewolf
+    firefox librewolf brave
     
     neovim tmux kitty ghostty vscode
     
     kicad syncthing obsidian
 
-    waybar gucharmap rofi wlogout fastfetch awww waypaper
+    waybar gucharmap rofi wlogout fastfetch swww waypaper
     hypridle hyprlock nwg-dock-hyprland adwaita-icon-theme
 
     spotify vesktop
@@ -38,10 +38,9 @@
 	  enable = true;
 	  settings = {
 		  font-family = "JetBrainsMono Nerd Font";
-		  font-size = 12;
+		  font-size = 11.5;
 
 		  background-opacity = 0.85;
-		  background-blue = true;
 		  theme = "Nord";
 	  };
 
@@ -51,9 +50,9 @@
   wayland.windowManager.hyprland = {
     enable = true;
     plugins = [
-# inputs.hyprland-plugins.packages.${pkgs.stdenv.hostPlatform.system}.hyprexpo
-# split-monitor-workspaces.packages.${pkgs.stdenv.hostPlatform.system}.split-monitor-workspaces
-    ];
+  # inputs.hyprland-plugins.packages.${pkgs.stdenv.hostPlatform.system}.hyprexpo
+  # inputs.split-monitor-workspaces.packages.${pkgs.stdenv.hostPlatform.system}.split-monitor-workspaces
+];
     extraConfig = builtins.readFile ./hypr/hyprland.conf;
   };
 

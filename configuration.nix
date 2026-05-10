@@ -21,6 +21,15 @@
   # time.timeZone = "America/Vancouver";
 
   nix.settings.experimental-features = [ "flakes" "nix-command" ];
+  
+  environment.systemPackages = with pkgs; [
+      wget
+      curl
+      zip
+      unzip
+      usbutils
+      psmisc
+  ];
 
 
 # Select internationalisation properties.
@@ -55,19 +64,13 @@
   programs.firefox.enable = true;
 
   fonts.packages = with pkgs; [
-    nerd-fonts.fira-code
-      nerd-fonts.droid-sans-mono
+	  noto-fonts
+	  noto-fonts-cjk-sans
+	  noto-fonts-color-emoji
   ];
 
   nixpkgs.config.allowUnfree = true;
 
-  environment.systemPackages = with pkgs; [
-    wget
-      curl
-      zip
-      unzip
-      usbutils
-  ];
 
 # Japanese Key Input
   i18n.inputMethod = {

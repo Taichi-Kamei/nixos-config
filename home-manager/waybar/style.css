@@ -34,7 +34,7 @@
 #clock {
   color: @white;
   font-weight: 600; 
-  font-size: 12pt;  
+  font-size: 11.5pt;  
   margin: 0 2px;
   padding: 0 8px;
 }
@@ -75,7 +75,7 @@
 
 #custom-power {
     color: @blue;
-    font-size: 15px;
+    font-size: 14px;
     padding: 0 4px;
     margin-left: 1px;
     margin-right: 10px;
@@ -88,8 +88,3 @@
   border-radius: 1rem;
 }
 
-
-#tray {
-  margin-right: 1rem;
-  border-radius: 0.7rem;
-}

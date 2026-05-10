@@ -1,6 +1,11 @@
 { pkgs, ... }: {
   programs.zsh = {
     enable = true;
+    initExtra = ''
+	    if [ -z "$DISPLAY" ] && [ "$XDG_VTNR" = "1" ]; then
+		    exec Hyprland
+	    fi
+    '';
     oh-my-zsh = {
       enable = true;
       plugins = [ "git" ];

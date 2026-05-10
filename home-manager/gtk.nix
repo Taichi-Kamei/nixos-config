@@ -1,6 +1,10 @@
-{ pkgs, ... }: {
+{ config, pkgs, ... }: {
   gtk = {
+
     enable = true;
+
+    gtk4.theme = config.gtk.theme;
+
     theme = {
       name = "Catppuccin-Mocha-Standard-Blue-Dark";
       package = pkgs.catppuccin-gtk;
