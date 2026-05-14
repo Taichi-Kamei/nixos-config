@@ -4,6 +4,7 @@
      ./zsh.nix
      ./gtk.nix
      ./qt.nix
+     ./nwg-dock-hyprland.nix
   ];
 
   home.username = "ta1";

@@ -91,18 +91,26 @@
 
   programs.zsh.enable = true;
   programs.firefox.enable = true;
+  
+  fonts = {
+	  enableDefaultPackages = true;
+	  packages = with pkgs; [
+		  nerd-fonts.jetbrains-mono
+		  jetbrains-mono
+		  font-awesome 
+		  noto-fonts-color-emoji
+		  noto-fonts
+		  noto-fonts-cjk-sans
+	  ];
 
-  fonts.packages = with pkgs; [
-  	  nerd-fonts.jetbrains-mono
-  	  font-awesome 
-	  noto-fonts-color-emoji
-  ];
-
-  fonts.fontconfig.defaultFonts = {
-  sansSerif = [ "Noto Sans" ];
-  serif = [ "Noto Serif" ];
-  monospace = [ "JetBrainsMono Nerd Font" ];
-};
+	  fontconfig = {
+	  	defaultFonts = {
+		  sansSerif = [ "Noto Sans" ];
+		  serif = [ "Noto Serif" ];
+		  monospace = [ "JetBrains Mono" ];
+		};
+	  };
+  };
 
   nixpkgs.config.allowUnfree = true;
 
