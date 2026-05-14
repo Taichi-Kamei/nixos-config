@@ -1,6 +1,6 @@
 { config, pkgs, ... }: {
 	
-	home.file.".config/nwg-dock-hyprland/style.css'.text = ''
+	home.file.".config/nwg-dock-hyprland/style.css".text = ''
 
 		window {
 		    background: rgba(17, 17, 27, 0.8); 
@@ -22,11 +22,11 @@
 		button:hover {
 		    padding-top: 2px;
 		    background: transparent;
-		    border-radius: 60px;
+		    /* border-radius: 60px; */
 		}
 
 		#active-dot {
 		    background-color: #89b4fa;
 		}
-	''
+	'';
 }
