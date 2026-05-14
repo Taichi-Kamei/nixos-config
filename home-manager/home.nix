@@ -12,20 +12,23 @@
 
   home.packages = with pkgs; [
     
-    git zsh tree tio
+    git zsh tree tio quickshell
 
     nautilus btop blueman pavucontrol playerctl brightnessctl wireplumber iwgtk nwg-look wev
+    dgop 
 
-    wl-clipboard cliphist grim slurp
+    wl-clipboard cliphist grim slurp wtype
 
     firefox librewolf brave
     
-    neovim tmux kitty ghostty vscode
+    neovim tmux kitty ghostty alacritty vscode
     
-    kicad syncthing obsidian
+    kicad syncthing obsidian slack
 
-    waybar gucharmap rofi wlogout fastfetch swww waypaper
-    hypridle hyprlock nwg-dock-hyprland adwaita-icon-theme
+    waybar gucharmap rofi wlogout fastfetch awww waypaper matugen
+    hypridle hyprlock nwg-dock-hyprland adwaita-icon-theme khal
+
+    cbonsai cava sl asciiquarium-transparent
 
     spotify vesktop
 
@@ -54,8 +57,10 @@
   # inputs.split-monitor-workspaces.packages.${pkgs.stdenv.hostPlatform.system}.split-monitor-workspaces
 ];
     extraConfig = builtins.readFile ./hypr/hyprland.conf;
+
   };
 
+    # source = ${config.home.homeDirectory}/.config/hypr/dms/binds.conf
   programs.hyprlock = {
 	  enable = true;
 	  extraConfig = builtins.readFile ./hypr/hyprlock.conf;
@@ -64,12 +69,14 @@
   services.hypridle.enable = true;
   home.file.".config/hypr/hypridle.conf".source = ./hypr/hypridle.conf;
 
+
   programs.waybar = {
-	enable = true;
+	enable = false;
 	style = builtins.readFile ./waybar/style.css;
   };
   home.file.".config/waybar/config.jsonc".source = ./waybar/config.jsonc;
   home.file.".config/waybar/frappe.css".source = ./waybar/frappe.css;
+
 
   programs.fastfetch = {
 	  enable = true;

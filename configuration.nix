@@ -16,9 +16,23 @@
   networking.networkmanager.enable = true;
   networking.networkmanager.wifi.backend = "iwd";
 
-# Set your time zone.
-  time.timeZone = "America/Chicago";
-  # time.timeZone = "America/Vancouver";
+  networking.wireless.iwd = {
+  	enable = true;
+	settings = {
+		General = {
+			EnableNetworkConfiguration = true;
+			AddressRandomization = "network";	
+		};
+
+		Network = {
+			EnableIPv6 = true;
+		};
+	};
+
+  };
+
+  # time.timeZone = "America/Chicago";
+  time.timeZone = "America/Vancouver";
 
   nix.settings.experimental-features = [ "flakes" "nix-command" ];
   
@@ -31,12 +45,27 @@
       psmisc
   ];
 
+  programs.hyprland.enable = true;
+  programs.dms-shell = {
+	enable = true;
+
+	systemd = {
+	  enable = true;             # Systemd service for auto-start
+	  restartIfChanged = true;   # Auto-restart dms.service when dms-shell changes
+	};
+
+	enableSystemMonitoring = true;     # System monitoring widgets (dgop)
+	enableVPN = true;                  # VPN management widget
+	enableDynamicTheming = true;       # Wallpaper-based theming (matugen)
+	enableAudioWavelength = true;      # Audio visualizer (cava)
+	enableCalendarEvents = true;       # Calendar integration (khal)
+	enableClipboardPaste = true;       # Pasting from the clipboard history (wtype)
+  };
 
 # Select internationalisation properties.
   i18n.defaultLocale = "en_US.UTF-8";
 
-  programs.hyprland.enable = true;
-
+  
 
 # Configure keymap in X11
   services.xserver.xkb.layout = "us";
@@ -64,10 +93,16 @@
   programs.firefox.enable = true;
 
   fonts.packages = with pkgs; [
-	  noto-fonts
-	  noto-fonts-cjk-sans
+  	  nerd-fonts.jetbrains-mono
+  	  font-awesome 
 	  noto-fonts-color-emoji
   ];
+
+  fonts.fontconfig.defaultFonts = {
+  sansSerif = [ "Noto Sans" ];
+  serif = [ "Noto Serif" ];
+  monospace = [ "JetBrainsMono Nerd Font" ];
+};
 
   nixpkgs.config.allowUnfree = true;
 
