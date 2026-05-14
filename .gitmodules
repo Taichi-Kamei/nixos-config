@@ -4,3 +4,6 @@
 [submodule "nvim"]
 	path = nvim
 	url = git@github.com:Taichi-Kamei/nvim.git
+[submodule "home-manager/home-manager/nvim"]
+	path = home-manager/home-manager/nvim
+	url = git@github.com:Taichi-Kamei/nvim
