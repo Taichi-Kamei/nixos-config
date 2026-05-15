@@ -2,7 +2,7 @@ return {
   "nvim-telescope/telescope.nvim", version = '*',
   dependencies = {
     "nvim-lua/plenary.nvim",
-    { "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
+    { "nvim-telescope/telescope-fzf-native.nvim", build = "false" },
     "folke/todo-comments.nvim",
   },
   config = function()
@@ -22,7 +22,7 @@ return {
       },
     })
 
-    telescope.load_extension("fzf")
+    pcall(telescope.load_extension, "fzf")
 
     -- set keymaps
     local keymap = vim.keymap -- for conciseness

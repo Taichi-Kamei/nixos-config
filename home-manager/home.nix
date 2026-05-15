@@ -13,7 +13,7 @@
 
   home.packages = with pkgs; [
     
-    git zsh tree tio quickshell
+    git zsh tree tio quickshell 
 
     nautilus btop blueman pavucontrol playerctl brightnessctl wireplumber iwgtk nwg-look wev
     dgop 
@@ -22,7 +22,7 @@
 
     firefox librewolf brave
     
-    neovim tmux kitty ghostty alacritty vscode
+    neovim tmux fzf kitty ghostty alacritty vscode
     
     kicad syncthing obsidian slack
 
