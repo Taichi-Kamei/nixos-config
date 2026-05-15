@@ -24,12 +24,12 @@
           set -g @rose_pine_field_separator '  '
           set -g @rose_pine_window_separator ' - '
           set -g @rose_pine_window_status_separator "  "
-          set -g @rose_pine_session_icon ''
-          set -g @rose_pine_current_window_icon ''
-          set -g @rose_pine_folder_icon ''
-          set -g @rose_pine_username_icon ''
-          set -g @rose_pine_hostname_icon '󰒋'
-          set -g @rose_pine_date_time_icon '󰃰'
+          set -g @rose_pine_session_icon '  '
+          set -g @rose_pine_current_window_icon '  ' 
+          set -g @rose_pine_folder_icon '  ' 
+          set -g @rose_pine_username_icon '  '
+          set -g @rose_pine_hostname_icon ' 󰒋 ' 
+          set -g @rose_pine_date_time_icon ' 󰃰 ' 
         '';
       }
     ];
