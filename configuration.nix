@@ -1,10 +1,6 @@
 { config, inputs, lib, pkgs, ... }: {
   
-  imports = [ 
-
-    ./hardware-configuration.nix
-
-    ];
+  imports = [ ./hardware-configuration.nix ];
 
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
@@ -17,17 +13,17 @@
   networking.networkmanager.wifi.backend = "iwd";
 
   networking.wireless.iwd = {
-  	enable = true;
-	settings = {
-		General = {
-			EnableNetworkConfiguration = true;
-			AddressRandomization = "network";	
-		};
+    enable = true;
+    settings = {
+      General = {
+        EnableNetworkConfiguration = true;
+        AddressRandomization = "network";	
+      };
 
-		Network = {
-			EnableIPv6 = true;
-		};
-	};
+      Network = {
+        EnableIPv6 = true;
+      };
+    };
 
   };
 
@@ -45,7 +41,12 @@
       psmisc
   ];
 
-  programs.hyprland.enable = true;
+  programs.hyprland = {
+    enable = true;
+    package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
+     portalPackage = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland;
+  };
+
   programs.dms-shell = {
     enable = true;
 
@@ -61,6 +62,8 @@
       enableCalendarEvents = true;       # Calendar integration (khal)
       enableClipboardPaste = true;       # Pasting from the clipboard history (wtype)
   };
+
+services.upower.enable = true;
 
 # Select internationalisation properties.
   i18n.defaultLocale = "en_US.UTF-8";
@@ -93,11 +96,11 @@
   fonts = {
 	  enableDefaultPackages = true;
 	  packages = with pkgs; [
-		  nerd-fonts.jetbrains-mono
+		  noto-fonts
 		  jetbrains-mono
 		  font-awesome 
+		  nerd-fonts.jetbrains-mono
 		  noto-fonts-color-emoji
-		  noto-fonts
 		  noto-fonts-cjk-sans
 	  ];
 
@@ -105,13 +108,12 @@
 	  	defaultFonts = {
 		  sansSerif = [ "Noto Sans" ];
 		  serif = [ "Noto Serif" ];
-		  monospace = [ "JetBrains Mono" ];
+		  monospace = [ "Noto Sans" ];
 		};
 	  };
   };
 
   nixpkgs.config.allowUnfree = true;
-
 
 # Japanese Key Input
   i18n.inputMethod = {
@@ -123,6 +125,12 @@
     ];
   };
 
+  environment.sessionVariables = {
+    GTK_IM_MODULE = "fcitx";
+    QT_IM_MODULE = "fcitx";
+    XMODIFIERS = "@im=fcitx";
+  };
+
 # Some programs need SUID wrappers, can be configured further or are
 # started in user sessions.
 # programs.mtr.enable = true;
@@ -131,13 +139,17 @@
 #   enableSSHSupport = true;
 # };
 
-
   services.openssh.enable = true;
 
   networking.firewall.allowedTCPPorts = [ 22 ];
 # networking.firewall.allowedUDPPorts = [ ... ];
 
-  system.stateVersion = "25.11"; 
+  nix.gc = {
+    automatic = true;
+    dates = "weekly";
+    options = "--delete-older-than 7d";
+  };
 
+  system.stateVersion = "25.11"; 
 }
 

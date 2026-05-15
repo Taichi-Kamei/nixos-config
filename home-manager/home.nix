@@ -1,4 +1,4 @@
-{config, pkgs, inputs, split-monitor-workspaces, ...}:{
+{config, pkgs, inputs, ...}:{
 
   imports = [
     ./modules/alacritty.nix
@@ -18,7 +18,7 @@
     git zsh tree tio quickshell 
 
     nautilus btop blueman pavucontrol playerctl brightnessctl wireplumber 
-    iwgtk nwg-look wev dgop 
+    iwgtk nwg-look wev dgop upower
 
     wl-clipboard cliphist grim slurp wtype
 
@@ -39,29 +39,16 @@
   ];
 
 
-  programs.ghostty = {
-
-	  enable = true;
-	  settings = {
-		  font-family = "JetBrainsMono Nerd Font";
-		  font-size = 11.5;
-
-		  background-opacity = 0.85;
-		  theme = "Nord";
-	  };
-
-  };
-
 
   wayland.windowManager.hyprland = {
     enable = true;
     configType = "hyprlang";
+    package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
     plugins = [
-      # inputs.hyprland-plugins.packages.${pkgs.stdenv.hostPlatform.system}.hyprexpo
-      # inputs.split-monitor-workspaces.packages.${pkgs.stdenv.hostPlatform.system}.split-monitor-workspaces
+      inputs.split-monitor-workspaces.packages.${pkgs.stdenv.hostPlatform.system}.split-monitor-workspaces
     ];
-    extraConfig = builtins.readFile ./hypr/hyprland.conf;
 
+    extraConfig = builtins.readFile ./hypr/hyprland.conf;
   };
 
   programs.hyprlock = {
@@ -72,13 +59,12 @@
   services.hypridle.enable = true;
   home.file.".config/hypr/hypridle.conf".source = ./hypr/hypridle.conf;
 
+
   programs.neovim = {
 	defaultEditor = true;
   };
   xdg.configFile."nvim".source = ./nvim;
 
-
-  # home.file.".tmux/tmux.conf".source = ./tmux/tmux.conf;
 
   programs.waybar = {
 	enable = false;
@@ -86,6 +72,18 @@
   };
   home.file.".config/waybar/config.jsonc".source = ./waybar/config.jsonc;
   home.file.".config/waybar/frappe.css".source = ./waybar/frappe.css;
+
+
+  programs.ghostty = {
+	  enable = true;
+	  settings = {
+		  font-family = "JetBrainsMono Nerd Font";
+		  font-size = 11.5;
+
+		  background-opacity = 0.85;
+		  theme = "Nord";
+	  };
+  };
 
 
   programs.fastfetch = {
