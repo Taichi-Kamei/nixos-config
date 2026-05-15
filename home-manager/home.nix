@@ -5,6 +5,7 @@
     ./zsh.nix
     ./gtk.nix
     ./qt.nix
+    ./tmux.nix
     ./nwg-dock-hyprland.nix
   ];
 
@@ -23,7 +24,7 @@
 
     firefox librewolf brave
     
-    neovim tmux fzf kitty ghostty alacritty vscode
+    neovim tmux tmuxPlugins.rose-pine fzf kitty ghostty alacritty vscode
     
     kicad syncthing obsidian slack
 
@@ -77,7 +78,7 @@
   xdg.configFile."nvim".source = ./nvim;
 
 
-  home.file.".tmux/tmux.conf".source = ./tmux/tmux.conf;
+  # home.file.".tmux/tmux.conf".source = ./tmux/tmux.conf;
 
   programs.waybar = {
 	enable = false;
