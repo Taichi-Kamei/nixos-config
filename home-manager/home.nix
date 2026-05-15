@@ -76,6 +76,11 @@
   };
   xdg.configFile."nvim".source = ./nvim;
 
+  programs.tmux = {
+    enable = true;
+  };
+  xdg.configFile."tmux".source = ./tmux/tmux.conf;
+
   programs.waybar = {
 	enable = false;
 	style = builtins.readFile ./waybar/style.css;
