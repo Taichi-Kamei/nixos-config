@@ -1,10 +1,11 @@
 {config, pkgs, inputs, split-monitor-workspaces, ...}:{
 
   imports = [
-     ./zsh.nix
-     ./gtk.nix
-     ./qt.nix
-     ./nwg-dock-hyprland.nix
+    ./alacritty.nix
+    ./zsh.nix
+    ./gtk.nix
+    ./qt.nix
+    ./nwg-dock-hyprland.nix
   ];
 
   home.username = "ta1";
@@ -55,14 +56,13 @@
     enable = true;
     configType = "hyprlang";
     plugins = [
-  # inputs.hyprland-plugins.packages.${pkgs.stdenv.hostPlatform.system}.hyprexpo
-  # inputs.split-monitor-workspaces.packages.${pkgs.stdenv.hostPlatform.system}.split-monitor-workspaces
-];
+      # inputs.hyprland-plugins.packages.${pkgs.stdenv.hostPlatform.system}.hyprexpo
+      # inputs.split-monitor-workspaces.packages.${pkgs.stdenv.hostPlatform.system}.split-monitor-workspaces
+    ];
     extraConfig = builtins.readFile ./hypr/hyprland.conf;
 
   };
 
-    # source = ${config.home.homeDirectory}/.config/hypr/dms/binds.conf
   programs.hyprlock = {
 	  enable = true;
 	  extraConfig = builtins.readFile ./hypr/hyprlock.conf;
@@ -76,10 +76,8 @@
   };
   xdg.configFile."nvim".source = ./nvim;
 
-  programs.tmux = {
-    enable = true;
-  };
-  xdg.configFile."tmux".source = ./tmux/tmux.conf;
+
+  home.file.".tmux/tmux.conf".source = ./tmux/tmux.conf;
 
   programs.waybar = {
 	enable = false;

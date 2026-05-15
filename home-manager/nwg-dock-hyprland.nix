@@ -16,13 +16,16 @@
 		    margin-top: 3px;
 		    background: transparent;
 		    border: none;
+        outline: none;
+        box-shadow: none;
 		    transition: all 0.2s ease-in-out;
 		}
 
 		button:hover {
 		    padding-top: 2px;
 		    background: transparent;
-		    /* border-radius: 60px; */
+        outline: none;
+        box-shadow: none;
 		}
 
 		#active-dot {
