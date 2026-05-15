@@ -7,10 +7,6 @@
 			inputs.nixpkgs.follows = "nixpkgs";
 		};
 
-		nvim-config = {
-  			url = "git+ssh://git@github.com:Taichi-Kamei/nvim";
-  			flake = false;
-		};
 
 		# dms.url = "github:AvengeMedia/DankMaterialShell";
 		

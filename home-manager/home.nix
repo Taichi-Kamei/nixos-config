@@ -71,7 +71,6 @@
   home.file.".config/hypr/hypridle.conf".source = ./hypr/hypridle.conf;
 
   programs.neovim = {
-  	enable = true;
 	defaultEditor = true;
   };
   xdg.configFile."nvim".source = ./nvim;
