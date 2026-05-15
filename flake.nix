@@ -24,6 +24,8 @@
       url = "github:zjeffer/split-monitor-workspaces"; 
       inputs.hyprland.follows = "hyprland";
       };
+
+    # nixpkgs-kicad.url = "github:nixos/nixpkgs?ref=pull/518028/head";
 	};
 
 	outputs = { self, nixpkgs, home-manager, hyprland-plugins, split-monitor-workspaces, ... } @ inputs: {
