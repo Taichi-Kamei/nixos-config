@@ -90,19 +90,21 @@
   programs.fastfetch = {
 	  enable = true;
 	  settings = {
+      logo = "NixOS";
+
 		  modules = [
 			  "title"
-				  "break"
-				  "os"
-				  "wm"
-				  "kernel"
-				  "cpu"
-				  "break"
-				  "uptime"
-				  "memory"
-				  "disk"
-				  "break"
-				  "colors"
+        "break"
+        "os"
+        "wm"
+        "kernel"
+        "cpu"
+        "break"
+        "uptime"
+        "memory"
+        "disk"
+        "break"
+        "colors"
 		  ];
 	  };
   };
