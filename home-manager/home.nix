@@ -15,8 +15,8 @@
     
     git zsh tree tio quickshell 
 
-    nautilus btop blueman pavucontrol playerctl brightnessctl wireplumber iwgtk nwg-look wev
-    dgop 
+    nautilus btop blueman pavucontrol playerctl brightnessctl wireplumber 
+    iwgtk nwg-look wev dgop 
 
     wl-clipboard cliphist grim slurp wtype
 
@@ -31,7 +31,7 @@
 
     cbonsai cava sl asciiquarium-transparent
 
-    spotify vesktop
+    spotify vesktop discord
 
     claude-code
   ];
@@ -53,6 +53,7 @@
 
   wayland.windowManager.hyprland = {
     enable = true;
+    configType = "hyprlang";
     plugins = [
   # inputs.hyprland-plugins.packages.${pkgs.stdenv.hostPlatform.system}.hyprexpo
   # inputs.split-monitor-workspaces.packages.${pkgs.stdenv.hostPlatform.system}.split-monitor-workspaces
