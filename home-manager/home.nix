@@ -1,12 +1,12 @@
 {config, pkgs, inputs, split-monitor-workspaces, ...}:{
 
   imports = [
-    ./alacritty.nix
-    ./zsh.nix
-    ./gtk.nix
-    ./qt.nix
-    ./tmux.nix
-    ./nwg-dock-hyprland.nix
+    ./modules/alacritty.nix
+    ./modules/zsh.nix
+    ./modules/gtk.nix
+    ./modules/qt.nix
+    ./modules/tmux.nix
+    ./modules/nwg-dock-hyprland.nix
   ];
 
   home.username = "ta1";
