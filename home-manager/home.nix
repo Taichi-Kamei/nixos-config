@@ -1,6 +1,7 @@
 {config, pkgs, inputs, ...}:{
 
   imports = [
+    ./modules/kitty.nix
     ./modules/alacritty.nix
     ./modules/zsh.nix
     ./modules/gtk.nix
@@ -20,9 +21,9 @@
     nautilus btop blueman pavucontrol playerctl brightnessctl
     wireplumber iwgtk nwg-look wev dgop upower
 
-    wl-clipboard cliphist grim slurp wtype
+    wl-clipboard cliphist grim slurp wtype zathura 
     
-    neovim tmux tmuxPlugins.rose-pine fzf 
+    neovim tmux tmuxPlugins.rose-pine fzf fd
     kitty ghostty alacritty vscode 
 
     clang clang-tools rustup python3 uv typst nodejs
@@ -86,6 +87,20 @@
 		  background-opacity = 0.85;
 		  theme = "Nord";
 	  };
+  };
+
+  programs.zathura = {
+    enable = true;
+    options = {
+      adjust-open  = "best";
+      guioptions = "";
+    };
+
+    mappings = {
+      i = "recolor";
+      j = "feedkeys \"<C-Down>\"";
+      k = "feedkeys \"<C-Up>\"";
+    };
   };
 
 
