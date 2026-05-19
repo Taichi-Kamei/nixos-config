@@ -2,11 +2,15 @@
 
   imports = [
     ./modules/kitty.nix
+    ./modules/ghostty.nix
     ./modules/alacritty.nix
     ./modules/zsh.nix
     ./modules/gtk.nix
     ./modules/qt.nix
     ./modules/tmux.nix
+    ./modules/zathura.nix
+    ./modules/fastfetch.nix
+
     ./modules/nwg-dock-hyprland.nix
   ];
 
@@ -21,7 +25,7 @@
     nautilus btop blueman pavucontrol playerctl brightnessctl
     wireplumber iwgtk nwg-look wev dgop upower
 
-    wl-clipboard cliphist grim slurp wtype zathura 
+    wl-clipboard cliphist grim slurp wtype zathura tdf 
     
     neovim tmux tmuxPlugins.rose-pine fzf fd
     kitty ghostty alacritty vscode 
@@ -41,7 +45,6 @@
 
     cbonsai cmatrix cava sl asciiquarium-transparent
   ];
-
 
 
   wayland.windowManager.hyprland = {
@@ -76,55 +79,5 @@
   };
   home.file.".config/waybar/config.jsonc".source = ./waybar/config.jsonc;
   home.file.".config/waybar/frappe.css".source = ./waybar/frappe.css;
-
-
-  programs.ghostty = {
-	  enable = true;
-	  settings = {
-		  font-family = "JetBrainsMono Nerd Font";
-		  font-size = 11.5;
-
-		  background-opacity = 0.85;
-		  theme = "Nord";
-	  };
-  };
-
-  programs.zathura = {
-    enable = true;
-    options = {
-      adjust-open  = "best";
-      guioptions = "";
-    };
-
-    mappings = {
-      i = "recolor";
-      j = "feedkeys \"<C-Down>\"";
-      k = "feedkeys \"<C-Up>\"";
-    };
-  };
-
-
-  programs.fastfetch = {
-	  enable = true;
-	  settings = {
-      logo = "NixOS";
-
-		  modules = [
-			  "title"
-        "break"
-        "os"
-        "wm"
-        "kernel"
-        "cpu"
-        "break"
-        "uptime"
-        "memory"
-        "disk"
-        "break"
-        "colors"
-		  ];
-	  };
-  };
-
 
 }
