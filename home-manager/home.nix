@@ -17,25 +17,28 @@
     
     git zsh tree tio quickshell 
 
-    nautilus btop blueman pavucontrol playerctl brightnessctl wireplumber 
-    iwgtk nwg-look wev dgop upower
+    nautilus btop blueman pavucontrol playerctl brightnessctl
+    wireplumber iwgtk nwg-look wev dgop upower
 
     wl-clipboard cliphist grim slurp wtype
+    
+    neovim tmux tmuxPlugins.rose-pine fzf 
+    kitty ghostty alacritty vscode 
+
+    clang clang-tools rustup python3 uv typst nodejs
+    
+    kicad syncthing obsidian 
 
     firefox librewolf brave
     
-    neovim tmux tmuxPlugins.rose-pine fzf kitty ghostty alacritty vscode
-    
-    kicad syncthing obsidian slack
-
     waybar gucharmap rofi wlogout fastfetch awww waypaper matugen
     hypridle hyprlock nwg-dock-hyprland adwaita-icon-theme khal
 
-    cbonsai cava sl asciiquarium-transparent
-
-    spotify vesktop discord
+    spotify vesktop discord slack
 
     claude-code
+
+    cbonsai cmatrix cava sl asciiquarium-transparent
   ];
 
 

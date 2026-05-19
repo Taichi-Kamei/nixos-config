@@ -7,7 +7,7 @@
       window = {
         padding = { x = 10; y = 10;};
         decorations = "none";
-        opacity = 0.85;
+        opacity = 0.80;
       };
 
       font = {

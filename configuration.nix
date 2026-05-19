@@ -41,6 +41,23 @@
       psmisc
   ];
 
+  users.users.ta1 = {
+    isNormalUser = true;
+    shell = pkgs.zsh;
+    extraGroups = [ "wheel" "networkmanager" "input"]; # Enable ‘sudo’ for the user.
+      packages = with pkgs; [
+      tree
+      ];
+  };
+
+  services.getty.autologinUser = "ta1";
+  services.displayManager.sddm = {
+    enable = true;
+    wayland.enable = true;
+  };
+
+  nixpkgs.config.allowUnfree = true;
+
   programs.hyprland = {
     enable = true;
     package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
@@ -52,43 +69,30 @@
 
     systemd = {
       enable = true;             # Systemd service for auto-start
-        restartIfChanged = true;   # Auto-restart dms.service when dms-shell changes
+      restartIfChanged = true;   # Auto-restart dms.service when dms-shell changes
     };
 
     enableSystemMonitoring = true;     # System monitoring widgets (dgop)
-      enableVPN = true;                  # VPN management widget
-      enableDynamicTheming = true;       # Wallpaper-based theming (matugen)
-      enableAudioWavelength = true;      # Audio visualizer (cava)
-      enableCalendarEvents = true;       # Calendar integration (khal)
-      enableClipboardPaste = true;       # Pasting from the clipboard history (wtype)
+    enableVPN = true;                  # VPN management widget
+    enableDynamicTheming = true;       # Wallpaper-based theming (matugen)
+    enableAudioWavelength = true;      # Audio visualizer (cava)
+    enableCalendarEvents = true;       # Calendar integration (khal)
+    enableClipboardPaste = true;       # Pasting from the clipboard history (wtype)
+    
   };
 
-services.upower.enable = true;
-
-# Select internationalisation properties.
-  i18n.defaultLocale = "en_US.UTF-8";
-
-# Configure keymap in X11
-  services.xserver.xkb.layout = "us";
-  services.xserver.xkb.options = "caps:escape";
+  services.upower.enable = true;
 
 # Enable CUPS to print documents.
   services.printing.enable = true;
+
+  hardware.bluetooth.enable = true;
 
   services.pipewire = {
     enable = true;
     pulse.enable = true;
   };
 
-  hardware.bluetooth.enable = true;
-  users.users.ta1 = {
-    isNormalUser = true;
-    shell = pkgs.zsh;
-    extraGroups = [ "wheel" "networkmanager" "input"]; # Enable ‘sudo’ for the user.
-      packages = with pkgs; [
-      tree
-      ];
-  };
 
   programs.zsh.enable = true;
   programs.firefox.enable = true;
@@ -97,23 +101,28 @@ services.upower.enable = true;
 	  enableDefaultPackages = true;
 	  packages = with pkgs; [
 		  noto-fonts
-		  jetbrains-mono
+      nerd-fonts.jetbrains-mono
 		  font-awesome 
-		  nerd-fonts.jetbrains-mono
 		  noto-fonts-color-emoji
 		  noto-fonts-cjk-sans
 	  ];
 
-	  fontconfig = {
-	  	defaultFonts = {
-		  sansSerif = [ "Noto Sans" ];
-		  serif = [ "Noto Serif" ];
-		  monospace = [ "Noto Sans" ];
-		};
-	  };
+    fontconfig = {
+      enable = true;
+      defaultFonts = {
+        sansSerif = [ "Noto Sans" ];
+        serif = [ "Noto Serif" ];
+        monospace = [ "JetBrainsMono Nerd Font" ];
+      };
+    };
   };
 
-  nixpkgs.config.allowUnfree = true;
+# Select internationalisation properties.
+  i18n.defaultLocale = "en_US.UTF-8";
+
+# Configure keymap in X11
+  services.xserver.xkb.layout = "us";
+  services.xserver.xkb.options = "caps:escape";
 
 # Japanese Key Input
   i18n.inputMethod = {
@@ -121,7 +130,7 @@ services.upower.enable = true;
     enable = true;
     fcitx5.addons = with pkgs; [
       fcitx5-mozc
-        fcitx5-gtk
+      fcitx5-gtk
     ];
   };
 
@@ -140,14 +149,13 @@ services.upower.enable = true;
 # };
 
   services.openssh.enable = true;
-
   networking.firewall.allowedTCPPorts = [ 22 ];
 # networking.firewall.allowedUDPPorts = [ ... ];
 
   nix.gc = {
     automatic = true;
     dates = "weekly";
-    options = "--delete-older-than 7d";
+    options = "--delete-older-than 5d";
   };
 
   system.stateVersion = "25.11"; 

@@ -19,9 +19,8 @@
       size = 24;
     };
     font = {
-      name = "JetBrainsMono Nerd Font";
-      size = 11;
+      name = "Noto Sans";
+      size = 10;
     };
   };
-
 }

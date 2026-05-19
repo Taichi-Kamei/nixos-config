@@ -1,15 +1,8 @@
 return {
   "numToStr/Comment.nvim",
+  commit = "e51f2b142d88bb666dcaa77d93a07f4b419aca70", -- stable older version
   event = { "BufReadPre", "BufNewFile" },
-  dependencies = {
-  },
   config = function()
-    -- import comment plugin safely
-    local comment = require("Comment")
-
-
-    -- enable comment
-    comment.setup({
-    })
+    require("Comment").setup()
   end,
 }

@@ -26,7 +26,7 @@
      fi
 
      if [ -z "$DISPLAY" ] && [ "$XDG_VTNR" = "1" ]; then
-         exec Hyprland
+         exec start-hyprland 
      fi
       [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
       export TERMINAL=ghostty
