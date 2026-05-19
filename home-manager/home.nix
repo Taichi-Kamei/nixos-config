@@ -54,9 +54,9 @@
     plugins = [
       inputs.split-monitor-workspaces.packages.${pkgs.stdenv.hostPlatform.system}.split-monitor-workspaces
     ];
-
-    extraConfig = builtins.readFile ./hypr/hyprland.conf;
   };
+  xdg.configFile."hypr/hyprland.conf".source = ./hypr/hyprland.conf;
+  
 
   programs.hyprlock = {
 	  enable = true;

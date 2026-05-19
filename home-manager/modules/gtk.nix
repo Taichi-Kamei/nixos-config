@@ -18,9 +18,5 @@
       package = pkgs.adwaita-icon-theme;
       size = 24;
     };
-    font = {
-      name = "Noto Sans";
-      size = 10;
-    };
   };
 }
