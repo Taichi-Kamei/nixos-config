@@ -50,7 +50,6 @@
       ];
   };
 
-  services.getty.autologinUser = "ta1";
   services.displayManager.sddm = {
     enable = true;
     wayland.enable = true;
@@ -61,7 +60,7 @@
   programs.hyprland = {
     enable = true;
     package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
-     portalPackage = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland;
+    portalPackage = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland;
   };
 
   programs.dms-shell = {
@@ -74,7 +73,7 @@
 
     enableSystemMonitoring = true;     # System monitoring widgets (dgop)
     enableVPN = true;                  # VPN management widget
-    enableDynamicTheming = true;       # Wallpaper-based theming (matugen)
+    enableDynamicTheming = false;       # Wallpaper-based theming (matugen)
     enableAudioWavelength = true;      # Audio visualizer (cava)
     enableCalendarEvents = true;       # Calendar integration (khal)
     enableClipboardPaste = true;       # Pasting from the clipboard history (wtype)

@@ -10,7 +10,6 @@
     ./modules/tmux.nix
     ./modules/zathura.nix
     ./modules/fastfetch.nix
-
     ./modules/nwg-dock-hyprland.nix
   ];
 
@@ -54,18 +53,15 @@
     plugins = [
       inputs.split-monitor-workspaces.packages.${pkgs.stdenv.hostPlatform.system}.split-monitor-workspaces
     ];
+    extraConfig = builtins.readFile ./hypr/hyprland.conf;
   };
-  xdg.configFile."hypr/hyprland.conf".source = ./hypr/hyprland.conf;
+
+
+  xdg.configFile."hypr/dms" = {
+    source = ./hypr/dms;
+    recursive = true;
+  };
   
-
-  programs.hyprlock = {
-	  enable = true;
-	  extraConfig = builtins.readFile ./hypr/hyprlock.conf;
-  };
-
-  services.hypridle.enable = true;
-  home.file.".config/hypr/hypridle.conf".source = ./hypr/hypridle.conf;
-
 
   programs.neovim = {
 	defaultEditor = true;
