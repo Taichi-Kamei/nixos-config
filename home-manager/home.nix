@@ -40,7 +40,7 @@
 
     spotify vesktop discord slack
 
-    claude-code
+    claude-code gamescope
 
     cbonsai cmatrix cava sl asciiquarium-transparent
   ];

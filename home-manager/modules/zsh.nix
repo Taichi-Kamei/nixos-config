@@ -29,11 +29,11 @@
          exec start-hyprland 
      fi
       [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-      export TERMINAL=ghostty
+      export TERMINAL=alacritty
       alias n="nvim"
       alias l="clear"
       alias re="sudo nixos-rebuild switch --flake ~/nixos-config#Melon"
-
+      alias dock="nwg-dock-hyprland -d -nolauncher -hd 0 -mb 3 -i 40 -m & disown"
     '';
   };
 
