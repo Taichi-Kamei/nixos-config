@@ -1,4 +1,4 @@
-{config, pkgs, inputs, ...}:{
+{config, pkgs, inputs, ...}: {
 
   imports = [
     ./modules/kitty.nix
@@ -56,7 +56,6 @@
     extraConfig = builtins.readFile ./hypr/hyprland.conf;
   };
 
-#  xdg.configFile."hypr/dms".source = ./hypr/dms;
 
   programs.neovim = {
 	defaultEditor = true;
