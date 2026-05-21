@@ -21,12 +21,12 @@
     
     git zsh tree tio quickshell 
 
-    nautilus btop blueman pavucontrol playerctl brightnessctl
+    kdePackages.dolphin nautilus btop blueman pavucontrol playerctl brightnessctl
     wireplumber iwgtk nwg-look wev dgop upower
 
     wl-clipboard cliphist grim slurp wtype zathura tdf 
     
-    neovim tmux tmuxPlugins.rose-pine fzf fd
+    neovim tmux tmuxPlugins.rose-pine fzf fd yazi
     kitty ghostty alacritty vscode 
 
     clang clang-tools rustup python3 uv typst nodejs
@@ -57,10 +57,7 @@
   };
 
 
-  xdg.configFile."hypr/dms" = {
-    source = ./hypr/dms;
-    recursive = true;
-  };
+  xdg.configFile."hypr/dms".source = ./hypr/dms;
   
 
   programs.neovim = {
