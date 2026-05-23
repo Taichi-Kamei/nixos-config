@@ -22,6 +22,9 @@ return {
   ---@module 'neo-tree'
   ---@type neotree.Config
   opts = {
+    window = {
+      width = 20,
+    },
     -- options go here
     "s1n7ax/nvim-window-picker",
     version = "2.*",
