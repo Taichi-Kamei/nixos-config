@@ -1,34 +1,51 @@
 return {
   "nvim-treesitter/nvim-treesitter",
-  event = { "BufReadPre", "BufNewFile" },
+  lazy = false,
   build = ":TSUpdate",
   dependencies = {
     "windwp/nvim-ts-autotag",
   },
   config = function()
-   
-    local configs = require("nvim-treesitter.config")  
+    local treesitter = require("nvim-treesitter")
 
-    configs.setup({ 
-      highlight = { enable = true },
-      indent = { enable = true },
-      ensure_installed = {
-        "json", "jsonc", "java", "typescript", "javascript", 
-        "tsx", "yaml", "typst", "html", "css", "prisma",
-        "markdown", "markdown_inline", "svelte", "graphql",
-        "bash", "lua", "vim", "dockerfile", "gitignore",
-        "query", "vimdoc", "c", "cpp", "make", "latex",
-        "ninja", "rst", "rust", "python", "asm"
-      },
-      incremental_selection = {
-        enable = true,
-        keymaps = {
-          init_selection = "<C-space>",
-          node_incremental = "<C-space>",
-          scope_incremental = false,
-          node_decremental = "<bs>",
-        },
-      },
+    local parsers = {
+      "json",
+      "java",
+      "typescript",
+      "javascript",
+      "tsx",
+      "yaml",
+      "typst",
+      "html",
+      "css",
+      "markdown",
+      "markdown_inline",
+      "bash",
+      "lua",
+      "vim",
+      "dockerfile",
+      "gitignore",
+      "query",
+      "vimdoc",
+      "c",
+      "cpp",
+      "cmake",
+      "make",
+      "latex",
+      "rst",
+      "rust",
+      "python",
+      "asm",
+      "zig",
+      "vhdl"
+    }
+    treesitter.install(parsers)
+
+    vim.api.nvim_create_autocmd('FileType', {
+      pattern = parsers,
+      callback = function()
+        vim.treesitter.start()
+      end,
     })
   end,
 }
