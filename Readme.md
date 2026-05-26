@@ -8,5 +8,5 @@ A Quickshell called the Dank-Material-Shell (DMS) dynamically manages most of th
 Handling the DMS monitor settings declaratively is a nightmare, so all the DMS related config are managed locally at ~/.config/hypr/dms.    
 You shouldn't need to make or edit the dms directory as it gets auto-generated during nixos-rebuild, and all the settings can be done from the DMS settings GUI.
 
-All nix files are in the home-manager/modules/ directory.  
+All nix files are in the home-manager/ directory.  
 Other config files have their own directory.

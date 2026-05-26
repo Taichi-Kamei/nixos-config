@@ -28,5 +28,10 @@ set("n", "<leader>u", ":UndotreeToggle<CR>")
 set("n", "<leader>ls", ":LspStop<CR>")
 set("n", "<leader>li", ":lua vim.diagnostic.open_float()<CR>")
 set("n", "<leader>cg", ":setlocal spell spelllang=en_ca<CR>")
+set("n", "<leader>ch", ":ClangdSwitchSourceHeader<CR>")
+set("n", "gd", vim.lsp.buf.definition)
+set("n", "gr", vim.lsp.buf.references)
+set("n", "gD", vim.lsp.buf.declaration)
 
 set("n", "<leader>t", ":Neotree toggle<CR>")
+

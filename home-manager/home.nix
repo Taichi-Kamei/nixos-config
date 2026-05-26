@@ -24,12 +24,12 @@
     nautilus btop blueman pavucontrol playerctl brightnessctl
     wireplumber iwgtk nwg-look wev dgop upower
 
-    wl-clipboard cliphist grim slurp wtype zathura tdf 
+    wl-clipboard cliphist grim slurp imagemagick wtype zathura tdf 
     
     neovim tmux tmuxPlugins.rose-pine fzf fd yazi
     kitty ghostty alacritty vscode 
 
-    clang clang-tools cmake ninja rustup python3 uv typst nodejs
+    clang clang-tools cmake ninja rustup python3 uv vale typst nodejs
     esptool
     
     kicad syncthing obsidian 
