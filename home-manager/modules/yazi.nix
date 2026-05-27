@@ -3,12 +3,13 @@
   programs.yazi = {
 
     enable = true;
+    shellWrapperName = "y";
 
     settings = {
       
       opener = {
-        edit = [{ run = ''nvim "$@"''; block = true; desc = "nvim"}; ];
-        pdf = [{ run = ''tdf "$@"''; block = true; desc = "tdf";}];
+        edit = [{ run = ''nvim "$@"''; block = true; desc = "nvim";} ];
+        pdf = [{ run = ''zathura "$@"''; orphan = true; desc = "zathura";}];
       };
 
       open.rules = [
@@ -25,8 +26,6 @@
         { on = "P";     run = ''shell zathura "$@"''; desc = "Open in zathura"; }
       ];
     };
-
-
   };
 
 

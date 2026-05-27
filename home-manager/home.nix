@@ -9,6 +9,7 @@
     ./modules/qt.nix
     ./modules/tmux.nix
     ./modules/zathura.nix
+    ./modules/yazi.nix
     ./modules/fastfetch.nix
     ./modules/nwg-dock-hyprland.nix
   ];

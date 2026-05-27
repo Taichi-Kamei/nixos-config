@@ -14,6 +14,9 @@
       {
         plugin = rose-pine;
         extraConfig = ''
+          set -g allow-passthrough all
+          set -ga update-environment TERM
+          set -ga update-environment TERM_PROGRAM
           set -g @rose_pine_variant 'moon'
           set -g @rose_pine_directory 'on'
           set -g @rose_pine_show_pane_directory 'off'
