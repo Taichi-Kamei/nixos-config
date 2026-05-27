@@ -26,7 +26,7 @@
 
     wl-clipboard cliphist grim slurp imagemagick wtype zathura tdf 
     
-    neovim tmux tmuxPlugins.rose-pine fzf fd yazi tree-sitter
+    neovim tmux tmuxPlugins.rose-pine fzf fd poppler yazi tree-sitter
     kitty ghostty alacritty vscode 
 
     clang clang-tools cmake ninja rustup python3 uv vale typst nodejs

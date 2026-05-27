@@ -31,10 +31,11 @@
       [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
       export TERMINAL=alacritty
       alias n="nvim"
+      alias y="yazi"
       alias l="clear"
       alias re="sudo nixos-rebuild switch --flake ~/nixos-config#Melon"
-      alias esp32="nix --experimental-features 'nix-command flakes' develop github:mirrexagon/nixpkgs-esp-dev#esp32-idf"
       alias dock="nwg-dock-hyprland -d -nolauncher -hd 0 -mb 3 -i 40 -m & disown"
+      alias esp32="nix --experimental-features 'nix-command flakes' develop github:mirrexagon/nixpkgs-esp-dev#esp32-idf"
     '';
   };
 
