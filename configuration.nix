@@ -9,23 +9,10 @@
 
   networking.hostName = "Melon"; 
 
+  networking.wireless.iwd.enable = true;
   networking.networkmanager.enable = true;
   networking.networkmanager.wifi.backend = "iwd";
-
-  networking.wireless.iwd = {
-    enable = true;
-    settings = {
-      General = {
-        EnableNetworkConfiguration = true;
-        AddressRandomization = "network";	
-      };
-
-      Network = {
-        EnableIPv6 = true;
-      };
-    };
-
-  };
+  
 
   # time.timeZone = "America/Chicago";
   time.timeZone = "America/Vancouver";

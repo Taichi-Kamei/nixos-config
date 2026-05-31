@@ -13,7 +13,8 @@ return {
         "--completion-style=detailed",
         "--function-arg-placeholders",
         "--fallback-style=llvm",
-        "--compile-commands-dir=."
+        "--compile-commands-dir=.",
+        "--query-driver=/nix/store/*/bin/xtensa-esp*,/nix/store/*/bin/*gcc*,/nix/store/*/bin/*g++*,/usr/bin/gcc,/usr/bin/g++,/usr/bin/clang,/usr/bin/clang++"
       },
       keys = {
         { "<leader>ch", "<cmd>ClangdSwitchSourceHeader<cr>", desc = "Switch Source/Header (C/C++)" },
