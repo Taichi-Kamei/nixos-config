@@ -2,17 +2,24 @@
   
   imports = [ ./hardware-configuration.nix ];
 
-  boot.loader.systemd-boot.enable = true;
+  boot.loader.systemd-boot.enable = false;
   boot.loader.efi.canTouchEfiVariables = true;
+  boot.loader.grub = {
+    enable = true;
+    efiSupport = true;
+    device = "nodev";
+    useOSProber = true;
+  };
 
   boot.kernelPackages = pkgs.linuxPackages_latest;
 
   networking.hostName = "Melon"; 
 
   networking.wireless.iwd.enable = true;
-  networking.networkmanager.enable = true;
-  networking.networkmanager.wifi.backend = "iwd";
-  
+  networking.networkmanager = {
+    enable = true;
+    wifi.backend = "iwd";
+  };
 
   # time.timeZone = "America/Chicago";
   time.timeZone = "America/Vancouver";
