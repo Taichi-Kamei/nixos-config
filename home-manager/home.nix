@@ -20,7 +20,7 @@
 
   home.packages = with pkgs; [
     
-    git zsh tree tio quickshell 
+    git zsh tree tio quickshell woeusb 
 
     nautilus btop blueman pavucontrol playerctl brightnessctl
     wireplumber iwgtk nwg-look wev dgop upower
