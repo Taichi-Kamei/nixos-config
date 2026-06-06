@@ -23,7 +23,7 @@
     git zsh tree tio quickshell woeusb 
 
     nautilus btop blueman pavucontrol playerctl brightnessctl
-    wireplumber iwgtk nwg-look wev dgop upower
+    wireplumber iwgtk nwg-look wev dgop upower bluez-tools
 
     wl-clipboard cliphist grim slurp imagemagick wtype zathura tdf 
     
@@ -63,6 +63,7 @@
 	defaultEditor = true;
   };
   xdg.configFile."nvim".source = ./nvim;
+  home.file.".vale.ini".source = ./nvim/vale.ini;
 
 
   programs.waybar = {
