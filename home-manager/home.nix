@@ -4,12 +4,12 @@
     ./modules/kitty.nix
     ./modules/ghostty.nix
     ./modules/alacritty.nix
-    ./modules/zsh.nix
-    ./modules/gtk.nix
     ./modules/qt.nix
+    ./modules/gtk.nix
+    ./modules/zsh.nix
     ./modules/tmux.nix
-    ./modules/zathura.nix
     ./modules/yazi.nix
+    ./modules/zathura.nix
     ./modules/fastfetch.nix
     ./modules/nwg-dock-hyprland.nix
   ];
@@ -57,6 +57,8 @@
     ];
     extraConfig = builtins.readFile ./hypr/hyprland.conf;
   };
+
+  home.file.".config/hypr/hypridle.conf".source = ./hypr/hypridle.conf;
 
 
   programs.neovim = {
