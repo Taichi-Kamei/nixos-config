@@ -30,8 +30,10 @@
     neovim tmux tmuxPlugins.rose-pine fzf fd poppler yazi tree-sitter
     kitty ghostty alacritty vscode 
 
-    clang clang-tools cmake ninja rustup python3 uv vale typst nodejs
-    esptool
+    clang clang-tools cmake ninja rustup python3 uv vale valeStyles.write-good 
+    typst nodejs esptool
+
+    mermaid-cli
     
     kicad syncthing obsidian 
 

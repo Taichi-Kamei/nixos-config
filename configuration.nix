@@ -12,7 +12,9 @@
   };
 
   boot.kernelPackages = pkgs.linuxPackages_latest;
-
+  boot.extraModprobeConfig = ''
+    options psmouse synaptics_intertouch=1
+    '';
   networking.hostName = "Melon"; 
 
   networking.wireless.iwd.enable = true;
