@@ -138,11 +138,11 @@
   networking.firewall.allowedTCPPorts = [ 22 ];
 # networking.firewall.allowedUDPPorts = [ ... ];
 
-  nix.gc = {
-    automatic = true;
-    dates = "weekly";
-    options = "--delete-older-than 5d";
-  };
+#  nix.gc = {
+#    automatic = true;
+#    dates = "weekly";
+#    options = "--delete-older-than 5d";
+#  };
 
   system.stateVersion = "25.11"; 
 }
